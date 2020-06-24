@@ -19,7 +19,7 @@ classdef CoxDescriptor
             obj.a = a;
         end
         function cd = nextCox(obj)
-            cd = libtte.CoxDescriptor(obj.mu(2:length(obj.mu)), obj.a(2:length(obj.a)));
+            cd = libtte.rv.CoxDescriptor(obj.mu(2:length(obj.mu)), obj.a(2:length(obj.a)));
         end
     end
 end

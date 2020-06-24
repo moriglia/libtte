@@ -14,8 +14,8 @@ function cdesc = estimateCox(m, Cx)
         mu = (k-b1*(k-1))/m;
         a = ones(1,k-1);
         a(1) = 1 - b1;
-        cdesc = libtte.CoxDescriptor(mu*ones(1, k), a);
+        cdesc = libtte.rv.CoxDescriptor(mu*ones(1, k), a);
     else
-        cdesc = libtte.CoxDescriptor([2 1/Cxsq]./m, [1/(2*Cxsq)]);
+        cdesc = libtte.rv.CoxDescriptor([2 1/Cxsq]./m, [1/(2*Cxsq)]);
     end
 end

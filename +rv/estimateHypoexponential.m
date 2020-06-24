@@ -7,5 +7,5 @@ function hd = estimateHypoexponential(m, Cx)
         error("Invalid mean value: %f", m);
     end
     
-    hd = libtte.HypoexponentialDescriptor((m*([1 1] + [1 -1]*sqrt(1 + 2*(Cxsq - 1)))/2).^-1);
+    hd = libtte.rv.HypoexponentialDescriptor((m*([1 1] + [1 -1]*sqrt(1 + 2*(Cxsq - 1)))/2).^-1);
 end

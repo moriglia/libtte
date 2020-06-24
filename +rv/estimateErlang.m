@@ -15,5 +15,5 @@ function ed = estimateErlang(m, Cx)
     end
     mu = kest / m;
     
-    ed = libtte.ErlangDescriptor(kest, mu);
+    ed = libtte.rv.ErlangDescriptor(kest, mu);
 end

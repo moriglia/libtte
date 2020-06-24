@@ -27,5 +27,5 @@ function id = estimateIperexponential(m, Cx)
     
     mu = (m*([1 1] + [-sqrt(q(2)/q(1)*(Cxsq - 1)/2) sqrt(q(1)/q(2)*(Cxsq - 1)/2)])).^-1;
     
-    id = libtte.IperexponentialDescriptor(q, mu);
+    id = libtte.rv.IperexponentialDescriptor(q, mu);
 end

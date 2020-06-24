@@ -5,5 +5,5 @@ function data = generateHypoexponential(descriptor, samples)
         data = data + exprnd(descriptor.mu(i)^-1, 1, samples);
     end
     
-    data = libtte.RandomVariableSet(data);
+    data = libtte.rv.RandomVariableSet(data);
 end
