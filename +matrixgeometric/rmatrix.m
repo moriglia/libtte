@@ -17,11 +17,12 @@ function R = rmatrix(varargin)
     STOP = varargin{end};
     A0 = varargin{1};
     dim = size(A0, 1);
-    factor = inv(~is_rate_matrix*eye(dim) - varargin{2});
+    constfactor = inv(~is_rate_matrix*eye(dim) - varargin{2});
     
     n=0;
     R = zeros(dim);
-    while(n < STOP && d > accuracy)
+    d = accuracy;
+    while(n < STOP && d >= accuracy)
         s = zeros(dim);
         Rp = R*R;
         for k = 0:lva-6
@@ -30,7 +31,7 @@ function R = rmatrix(varargin)
         end
         
         tmp = R;
-        R = (s + A0)*factor;
+        R = (s + A0)*constfactor;
         d = max(abs(tmp - R), [], 'all');
         n = n + 1;
     end
